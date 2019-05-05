@@ -1,0 +1,79 @@
+div.paginator
+{
+    border: solid 1px #6f9dd9;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-family: Tahoma;
+    font-size: 8.5pt;
+    color: #000;
+    height: 18px;
+    color: #666666;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;   
+     
+}
+
+div.paginator div.paginator-tiggers
+{
+    display: flex;
+    width: 50%;
+    flex-wrap: nowrap;
+}
+
+div.paginator a{
+    color:#4682B4;
+    text-decoration: none;
+}
+div.paginator a:hover{
+  
+    text-decoration: underline;
+}
+
+div.paginator div.paginator-tiggers a,
+div.paginator div.paginator-tiggers span,
+div.paginator div.paginator-info a,
+div.paginator div.paginator-info span{
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+div.paginator div.paginator-info{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loaderxs {
+    border: 2px solid white ;
+    -webkit-animation: spin 0.6s linear infinite;
+    animation: spin 0.6s linear infinite;
+    border-top: 2px solid #0074cc;
+    border-bottom: 2px solid #0074cc;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+  }
+  
+  
+.loaderStatic {
+    border: 2px solid white ;
+    border-top: 2px solid #0074cc;
+    border-bottom: 2px solid #0074cc;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+  }
+
+  .loadingPanel{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }

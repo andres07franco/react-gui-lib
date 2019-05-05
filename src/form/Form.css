@@ -1,0 +1,60 @@
+
+ .form-row{
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 5px;
+    height: 18px;
+}
+
+.form-row > label{
+    padding-right: 10px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    padding-top: 3px;  
+    text-align: left ;
+    padding-right: 20px;
+    width: 60px;
+    font-family: Tahoma;
+    font-size: 8.5pt;
+    color: #000;
+}
+
+.form-row > input,
+.form-row > div > input,
+.form-row >  select{
+    display: inline;
+    border-left: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    border-right: solid 1px silver;
+}
+
+.form-row > button{
+    width: 80px;
+    margin-left: calc(100% - 370px);
+    font-family: Tahoma;
+    font-size: 8.5pt;
+}
+
+.form-row > label.label-value{
+    width: 124px;    
+    margin-right: 20px;     
+    padding-left: 0px;
+    font-weight: normal;
+} 
+
+.form-row > input.error,
+.form-row >  select.error,
+.form-row >  textarea.error,
+.form-row .searchLookup.error {  
+    border-left: solid 1px rgb(255, 0, 0);
+    border-top: solid 1px red;
+    border-bottom: solid 1px red;
+    border-right: solid 1px red;
+    border-style: dashed;
+}
+.form-row > select {   
+    font-size: 8.5pt;
+}

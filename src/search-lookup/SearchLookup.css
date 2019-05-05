@@ -1,0 +1,25 @@
+div.searchLookup {
+    border: solid 1px silver;
+    background-color: White;
+    padding: 1px 2px 3px 2px;
+    height: 15px;
+    vertical-align: baseline;
+}
+
+div.searchLookup a {
+    color: #003399;
+    text-decoration: none;
+}
+
+div.searchLookup a:hover {
+    color: Black;
+    text-decoration: underline;
+}
+
+div.searchLookup a.clear {
+    padding-left: 12px;
+    background-image: url('http://sispuertos.dnndev.me/WebResource.axd?d=aTkMzKl7kDI65BX59tLa-1Zy_Mn5Bq_qlYrGphyNXA5NDnPCYtus7kcEiGTPZZyQAzg3yzRnKWoRg3xahNd2RF-8Up8JHtcGglryDQ2&t=636419549940000000');
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 12px;
+}

@@ -1,0 +1,84 @@
+
+.actionButton{ 
+    padding-left: 5px;
+    padding-right: 10px;
+    display: inline-flex;
+    height: 17px; 
+    vertical-align: baseline;
+    cursor: pointer;
+    position: relative;
+    margin-top: 2px;
+   
+  }
+  
+  .actionButton:hover{
+      border-right: solid 1px #89724F;
+      border-top: solid 1px #89724F;
+      border-left: solid 1px #89724F;
+      border-bottom: solid 1px #89724F;
+      background-image: url('http://sispuertos.dnndev.me/images/cot/HoverRow.gif');
+      background-repeat: repeat-x; 
+      margin-top:1px;
+      margin-left:1px;
+      padding-left: 4px;
+      padding-right: 9px;        
+  }
+  
+  div.actionButton:hover span.icon{
+      margin-left:-1px;
+  }
+  
+  .actionButton span.icon {
+      
+      display: inline-flex;
+      width: 30px;
+      height: 17px;    
+  }
+  
+  .actionButton a.action {
+        color: #003399;
+      display: inline-flex;
+      width: auto;
+      height: 17px;
+      text-decoration: none;
+      font-family: Tahoma  ;
+      font-size: 8.5pt ;
+      align-items: center;
+  }
+  
+  .actionButton span.NewIcon {
+      background-image: url('http://sispuertos.dnndev.me/images/cot/btnNuevo.gif');
+    background-repeat: no-repeat;
+    background-position: 3px center;
+    background-position-y: 0px;
+  }
+  
+  .actionButton span.EditIcon {
+      background-image: url('http://sispuertos.dnndev.me/images/cot/btnEditar.gif');
+    background-repeat: no-repeat;
+    background-position: 3px center;
+    background-position-y: 1px;
+  }
+  
+  .actionButton span.ExcelIcon {
+      background-image: url('http://sispuertos.dnndev.me/images/cot/Excel.png');
+      background-repeat: no-repeat;
+      background-position: 3px center;
+      background-position-y: 1px;
+    }
+    
+    div.actionDivider {
+        width: 6px;
+        height: 18px;
+        margin-top: 2px;
+        background-image:  url('http://sispuertos.dnndev.me/images/cot/Space.gif');
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: inline-flex;
+        padding-right: 10px;
+    }
+
+    .actionButtonContent{
+        display: flex;
+        flex-wrap: nowrap;
+    }

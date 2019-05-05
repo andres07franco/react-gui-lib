@@ -1,0 +1,120 @@
+
+/*table estilos*/
+
+.table{
+    min-width: 300px;
+    overflow: auto;
+  }
+ 
+  
+  .table  table  > tbody > tr.row-selected  td
+  {
+    background-color: #D1ECFA !important;
+  }
+  
+  .table table{
+     width: 100%;   
+ }
+ 
+ .table table thead tr
+ {
+   padding: 0;
+   margin: 0;
+   background: #F2F2F2;
+   height: auto !important;
+   border: 0px !important;
+ }
+ 
+ .table table thead tr th
+ {
+  color: #808080;
+  text-decoration: none;
+  text-align: left;
+  padding: 3px;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  font-family: Tahoma !important;
+  font-size: 8.5pt !important;  
+  font-weight: inherit !important; 
+  background-color: #f2f2f2; 
+  
+ }
+ .table table thead tr th:hover{
+     background-color: #DDE1E5; 
+ }
+ .table table thead tr th a{
+     text-decoration: none;
+     color:gray;
+ }
+ 
+ 
+ .table table thead tr th a:hover{
+     text-decoration: underline;
+     color:black;
+ }
+ 
+ 
+ /*.mat-cel*/
+ .table table tbody tr td {  
+     background-color: #FFF;
+     border-top:solid 1px #FFF !important;
+     border-bottom:solid 1px #FFF !important;
+     font-family: Tahoma !important;
+     font-size: 8.5pt !important;    
+     color: #000;    
+     padding: 2px;
+     padding-left: 5px !important;
+     padding-right: 5px !important;
+ }
+ 
+ 
+ .table table tbody tr:nth-child(even) td {
+     background-color: #F5F5F5 !important;
+     border-top:solid 1px #F5F5F5 !important;
+     border-bottom:solid 1px #F5F5F5 !important;
+ }
+ 
+ .table table  tbody > tr:hover > td {
+     background-color: #FFe6a0 !important;
+     border-top:solid 1px #d2b47a !important;
+     border-bottom:solid 1px #d2b47a !important;
+     background-color:  #FFe6a0 !important;
+ }
+ 
+ .table table tbody tr.RowCodSelected  td {
+     background-color: #D1ECFA !important;
+     border-top: solid 1px #B6E6FB !important;
+     border-bottom: solid 1px #B6E6FB !important;
+ }
+ 
+ 
+ .table table thead tr th a
+ {
+   display: flex;
+   flex-wrap: nowrap;
+    
+ }
+ 
+ .orderDirectionasc {
+     display: inline-block;
+     width: 0; 
+     height: 0; 
+     border-left: 5px solid transparent;
+     border-right: 5px solid transparent;    
+     border-top: 5px solid #808080;
+     margin-top: 5px;
+     margin-left: 5px;
+   }
+ 
+   .orderDirectiondesc {
+     display: inline-block;
+     width: 0; 
+     height: 0; 
+     border-left: 5px solid transparent;
+     border-right: 5px solid transparent;    
+     border-bottom: 5px solid #808080;
+     margin-top: 5px;
+     margin-left: 5px;
+   }
+ 
+ 

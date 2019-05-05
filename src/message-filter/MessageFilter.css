@@ -1,0 +1,36 @@
+/*message info*/
+
+span.info-message-icon {
+    background-image: url('/../../images/facture-search-lookup.infoIcon.gif');
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    margin-left: -19px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+    vertical-align: middle;
+    min-height: 10px;
+    font-family: tahoma;
+    font-size: 8.5pt;
+  }
+  
+  div.info-message  {
+    background-color: #FFFFE1;
+    padding: 4px 5px 2px 22px;
+    border-left: solid 1px silver;
+    border-right: solid 1px silver;
+    border-bottom: solid 1px silver;
+    font-family: tahoma;
+    font-size: 8.5pt;
+  }
+  div.info-message a.close {
+    padding-right: 15px;
+    color: #4682B4;
+    text-decoration: none;
+    background-image: url('/../../images/facture-search-lookup.closeButton.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+    float: right;
+  }

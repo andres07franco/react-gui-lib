@@ -1,0 +1,31 @@
+.AutocompleteList {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index:  200000;
+    background-color: white;
+    overflow: auto;
+    max-height: 300px;
+
+    padding: 1px;
+
+}
+
+.AutocompleteList li{
+    list-style-type: none;
+    cursor: pointer;
+    padding: 4px;
+    border:solid 1px white ;
+    background-color: white;
+}
+
+.AutocompleteList  li:hover{
+    background-color: #FFe6a0 ;
+     border:solid 1px #d2b47a ;
+}
+
+.AutocompleteList  li.hover{
+    background-color: #FFe6a0 ;
+     border:solid 1px #d2b47a ;
+
+}

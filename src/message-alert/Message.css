@@ -1,0 +1,49 @@
+div.alert-dismissable {
+    visibility: visible;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;    
+    z-index:  200000;
+    padding: 5px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.alert-dismissable.alert-success {
+    background-color: #ECFFEB;
+    border: 1px solid #64B657;
+    color: #358927;
+}
+
+.alert-dismissable.alert-info{
+    border: 1px solid #46A3D3; /* blue */
+    background: #EDF8FF; /* blue */
+    color: #085B8F;/* blue */
+}
+
+.alert-dismissable.alert-danger {
+    background-color: #F7EAEA; /* red */
+    border-color: #DF4A40; /* red */
+    color: #990000;
+}
+
+.alert-dismissable.alert-warning{        
+    background-color: #FEFFCE; /* yellow */
+    border-color: #CDB21F; /* yellow */
+}
+
+.alert-dismissable a.close{
+    padding-right: 15px;
+    color: #4682B4;
+    text-decoration: none;
+    background-image: url('/../../images/cot/Cerrar.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+    float: right;    
+    margin-right: 20px;
+    cursor: pointer;
+}
+    
+
