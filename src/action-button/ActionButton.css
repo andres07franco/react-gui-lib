@@ -1,0 +1,35 @@
+
+/* Ripple effect */
+.actionButton {
+  background-position: center;
+  transition: background 0.8s;
+  background: transparent ;
+  padding:10px;
+   cursor:pointer;
+   margin:3px;
+   display:flex;
+   align-items: center;
+     border: none;
+  border-radius: 2px;
+   
+}
+.actionButton:hover {
+  background: rgba(0,0,0,.04) radial-gradient(circle, transparent 1%, rgba(0,0,0,.04) 1%) center/15000%;
+}
+.actionButton:active {
+  background-color: rgba(0,0,0,.04);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+    .actionButtonContent{
+        display: flex;
+        flex-wrap: nowrap;
+      
+    }
+
+      .actionButton i{
+      font-size:20px;
+      padding-right:5px;
+ 
+  }

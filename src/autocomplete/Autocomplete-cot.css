@@ -14,16 +14,18 @@
 .AutocompleteList li{
     list-style-type: none;
     cursor: pointer;
-    padding: 15px;
+    padding: 4px;
+    border:solid 1px white ;
     background-color: white;
-    font-size:16px;
 }
 
 .AutocompleteList  li:hover{
-    background-color: rgba(0,0,0,.04);   
+    background-color: #FFe6a0 ;
+     border:solid 1px #d2b47a ;
 }
 
 .AutocompleteList  li.hover{
-    background-color: rgba(0,0,0,.04);   
-}
+    background-color: #FFe6a0 ;
+     border:solid 1px #d2b47a ;
 
+}

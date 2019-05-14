@@ -1,0 +1,56 @@
+
+.actionButton{ 
+     padding:0;
+    padding-left: 5px;
+    padding-right: 10px;
+    display: inline-flex;
+    height: 17px; 
+    vertical-align: baseline;
+    cursor: pointer;
+    position: relative;
+    background: transparent;
+    font-size: 8.5pt ;
+    color: #003399;
+    align-items: center;
+    border-right: solid 1px transparent;
+    border-top: solid 1px transparent;
+    border-left: solid 1px transparent;
+    border-bottom: solid 1px transparent;
+  }
+  
+  .actionButton:hover{
+      border-right: solid 1px #89724F;
+      border-top: solid 1px #89724F;
+      border-left: solid 1px #89724F;
+      border-bottom: solid 1px #89724F;
+      background: #fceabb; /* Old browsers */
+      background: -moz-linear-gradient(top, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
+     
+  }
+  
+
+  
+  .actionButton i{
+      font-size:18px;
+      padding-right:5px;
+ 
+  }
+  
+    div.actionDivider {
+        width: 1px;
+        height: 18px;
+ 
+        background-repeat: no-repeat;
+        background-position: center center;
+          background-color: rgba(123, 172, 239, 0.4);
+        display: inline-flex;
+        padding: 0;
+    }
+
+    .actionButtonContent{
+        display: flex;
+        flex-wrap: nowrap;
+    }

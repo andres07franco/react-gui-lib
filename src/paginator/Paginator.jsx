@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './paginator.css'
+import {ReactGuiContext} from '../react-gui-provider'
 
 /**
  * Componente Paginador
  */
 export class Paginator extends Component {
 
+    style = {}
     //Tiggers Settings
     maxPageTiggers = 7;
 
@@ -234,9 +236,15 @@ export class Paginator extends Component {
     render() {
 
         return (
-            <div className="paginator">
+                                  <ReactGuiContext.Consumer>
+       {({ skin }) => {
+          
+          style = skin.PaginataroStyle
+
+                  return (
+            <div className={style.paginator}>
                 {this.props.itemsCount > this.props.pageSize &&
-                    <div className="paginator-tiggers">
+                    <div className={style.paginatorTiggers}>
                         <a style={this.state.currentPage == 1 ? this.disbleStyle : {}}
                             onClick={this.prevHandle}
                             href="javascript:void(0)">« Anterior</a>
@@ -274,8 +282,8 @@ export class Paginator extends Component {
                     </div>
                 }
                 {this.props.itemsCount <= this.props.pageSize &&
-                    <div className="paginator-tiggers"></div>}
-                <div className="paginator-info">
+                    <div className={style.paginatorTiggers}></div>}
+                <div className={style.paginatorInfo}>
                     {this.props.itemsCount > this.props.pageSize &&
                         <div>
                             <span>Items por página: </span>
@@ -286,15 +294,19 @@ export class Paginator extends Component {
                         </div>
                     }
                     <span>Mostrando {this.state.from}-{this.state.to} de {this.props.itemsCount} ítems</span>
+                    <span style={{ paddingRight: '5px' }}>|</span>
                 </div>
                 <div>
-                    <span style={{ paddingRight: '5px' }}>|</span>
-                    <div onClick={this.refreshHandle} style={{ paddingRight: '5px' }} className="loadingPanel">
-                        <div className={this.state.showLoading ? "loaderxs" : "loaderStatic"}></div>
+                    
+                    <div onClick={this.refreshHandle} style={{ paddingRight: '5px' }} className={style.loadingPanel}>
+                        <div className={this.state.showLoading ? style.loaderxs : style.loaderStatic}></div>
                     </div>
                 </div>
 
             </div>
+                                          )
+              }}
+    </ReactGuiContext.Consumer>
         );
     }
 

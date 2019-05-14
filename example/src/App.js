@@ -1,34 +1,73 @@
-import React from 'react'
-import { ActionBar,ActionBarContent, ActionBarHeader, Table, Column, ActionButton } from 'react-gui-lib'
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import './style.css';
 
-const data = [
-    {name:'Tony stark',supername:'Ironman',power:'Genius'},
-    {name:'Steve Rogers',supername:'American Cap',power:'Force'},
-    {name:'Thor',supername:'Thor',power:'God'},
-    {name:'Thor',supername:'Thor',power:'God'},
-    {name:'Thor',supername:'Thor',power:'God'},
-    {name:'Thor',supername:'Thor',power:'God'},
+
+import { ActionBar, ActionBarContent, ActionBarHeader,MaterialSkin,ReactGuiContext } from 'react-gui-lib'
+
+import { data, sl_settings } from './data.js'
+
+const superNames = [
+  'thor', 'ironman', 'balc widow', 'falcon', 'cap', 'spiderman'
 ]
-export default function App(){
+
+export default class App extends Component {
+
+  constructor(props) {
+    super(props)
+        let dataFilter = data.slice(0, 5)
+
+    this.state = {
+      data: dataFilter,
+      pageNumber: 1,
+      pageSize: 5,
+      itemsCount: data.length,
+      showGridLoading: false,
+      showModal: false,
+      supername: '',
+      name: ''
+    }
+  }
+
+  handleOnPage = (pageOptions) => {
+
+    let dataFilter = data.slice((pageOptions.page - 1) * pageOptions.pageSize, (pageOptions.page) * pageOptions.pageSize)
+
+    this.setState({ showGridLoading: true })
+    setTimeout(() => {
+      this.setState({
+        pageNumber: pageOptions.page,
+        pageSize: pageOptions.pageSize,
+        data: dataFilter,
+        showGridLoading: false,
+
+
+      })
+    }, 1000)
+  }
+
+  render() {
     return (
-        <div>
-            <h1>Hello react ui lite</h1>
-            <p>This is an exmaple:</p>
-            <ActionBar>
-                <ActionBarHeader>
-                    <ActionButton value='new'/>
-                </ActionBarHeader>
-                <ActionBarContent>
-                        <label >Hero name </label>
-                        <input />                        
-                </ActionBarContent>
-            </ActionBar>
-            <Table dataSource={data}>
-                <Column headerText="Name" field="name"/>
-                <Column headerText="Super Name" field="supername"/>
-                <Column headerText="Super Power" field="power"/>
-            </Table>            
-        </div>
+      <ReactGuiContext.Provider value={{ skin:MaterialSkin }}>
+       
+
+        <h1>Hello react gui lib</h1>
+
+        <ActionBar>
+          <ActionBarHeader>
+          </ActionBarHeader>
+          <ActionBarContent>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+   onClick
+            </div>
+          </ActionBarContent>
+        </ActionBar>
+
+
+      </ReactGuiContext.Provider>
     )
+  }
 }
 
+
+render(<App />, document.getElementById('root'));

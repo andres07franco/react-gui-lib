@@ -1,0 +1,50 @@
+div.searchLookup {
+    width: 200px;
+    border-left: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    border-right: solid 1px silver;
+        padding: 2px 0px 2px 0px;
+    background: white;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.searchLookup a {
+    color: #003399;
+    text-decoration: none;
+    margin-left:2px;
+}
+
+div.searchLookup a:hover {
+    color: Black;
+    text-decoration: underline;
+}
+
+div.searchLookup a.clear {
+    padding-left: 12px;
+  
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 12px;
+}
+div.searchLookupContainer{
+  display:flex;
+
+}
+
+.searchLookupContainer > label{
+  width: 100px;
+  font-weight:normal;
+  pointer-events:none;
+  padding-right:4px;
+      font-family: Tahoma;
+    font-size: 8.5pt;
+    color: #000;
+}
+
+div.searchLookup > i{
+  cursor:pointer;
+  font-size: 14px;
+}

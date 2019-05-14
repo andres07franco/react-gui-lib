@@ -1,0 +1,149 @@
+.actionBar{
+      box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+
+}
+.actionBarContent {
+    position: relative;
+    background-repeat: repeat-x;
+    border-top: 0px;
+    padding: 15px;
+    padding-top: 10px;
+    align-items: center;
+}
+
+ .actionBarHeader{ 
+height: 45px;
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 10px;
+    align-items: center;
+
+  }
+
+  .actionBarHeader:hover
+{
+    background: rgba(0,0,0,.04);
+}
+
+  span.expandButton
+  {
+    display: inline-block;
+    margin-top:-4px;
+  }
+
+.actionBarHeader  span.expandButton span  {
+    display: inline-block;
+    border-radius:50%;
+    text-align:center;
+    cursor:pointer;
+    padding-left:5px;
+    padding-right:5px;
+  }
+  
+
+
+.actionBarHeader  span.expandButton span i{
+    position: relative;
+    left: 0px;
+}
+
+.actionBarHeader  span.expandButton span i {
+    border: solid  rgba(0,0,0,.87);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 5px;   
+     transform: rotate(45deg);
+     -webkit-transform: rotate(45deg);
+}
+
+.actionBarHeader   span.expandButton span i.isExpanded
+{
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    margin-top:10px;
+}
+
+
+.quickSearch
+{
+    margin-left: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+    height: 15px;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.inputBoxQuick { 
+  position:relative; 
+}
+.inputBoxQuick input 				{
+  font-size:14px;
+  padding:5px 0px 5px 0px;
+  display:block;
+  width:200px;
+  border:none;
+  margin-left: 3px;
+  border-bottom:1px solid #757575;
+}
+.inputBoxQuick input:focus{ outline:none; }
+
+
+/* BOTTOM BARS ================================= */
+.inputBoxQuick .bar 	{ position:relative; display:block; width:200px; }
+.inputBoxQuick  .bar:before, .inputBoxQuick .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  top:-2px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.inputBoxQuick .bar:before {
+  left:50%;
+}
+.inputBoxQuick .bar:after {
+  right:50%; 
+}
+
+/* active state */
+.inputBoxQuick input:focus ~ .bar:before, .inputBoxQuick  input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.inputBoxQuick  .highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  bottom:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+.inputBoxQuick input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
