@@ -18,6 +18,10 @@ div.searchLookup > a {
     padding:10px 0px 10px 0px;
 }
 
+div.searchLookup > a.selectedValue {
+  color: Black;  
+}
+
 div.searchLookup a:hover {
     color: Black;
     text-decoration: underline;

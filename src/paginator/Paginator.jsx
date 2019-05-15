@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './paginator.css'
-import {ReactGuiContext} from '../react-gui-provider'
-
+import { ReactGuiContext } from '../react-gui-provider'
+let style = {}
 /**
  * Componente Paginador
  */
 export class Paginator extends Component {
 
-    style = {}
+
     //Tiggers Settings
     maxPageTiggers = 7;
 
@@ -19,33 +19,33 @@ export class Paginator extends Component {
         color: '#808080',
         cursor: 'text '
     };
-    
+
     constructor(props) {
         super(props);
         this.initState(props);
     }
 
-    initState(props){
+    initState(props) {
 
         var lastPageIndex = 1;
         if (props.itemsCount > 0) {
-            const numPages = Math.ceil(props.itemsCount / (this.pageSize?this.pageSize:props.pageSize));
+            const numPages = Math.ceil(props.itemsCount / (this.pageSize ? this.pageSize : props.pageSize));
             lastPageIndex = numPages;
         }
 
         const tiggersOption =
             this.calculeTiggersLinks(1, props.pageSize, this.maxPageTiggers, props.itemsCount)
 
-            this.state = {
-                currentPage: props.pageNumber?props.pageNumber:1,
-                itemsCount: parseInt(props.itemsCount),
-                from: 1,
-                pageSize: parseInt(props.pageSize),
-                to: props.itemsCount < this.pageSize ? props.itemsCount : this.pageSize,
-                lastPageIndex: lastPageIndex,
-                showLoading: props.showLoading,
-                ...tiggersOption
-            };     
+        this.state = {
+            currentPage: props.pageNumber ? props.pageNumber : 1,
+            itemsCount: parseInt(props.itemsCount),
+            from: 1,
+            pageSize: parseInt(props.pageSize),
+            to: props.itemsCount < this.pageSize ? props.itemsCount : this.pageSize,
+            lastPageIndex: lastPageIndex,
+            showLoading: props.showLoading,
+            ...tiggersOption
+        };
     }
 
     /**
@@ -99,7 +99,7 @@ export class Paginator extends Component {
     /**
      * Actualiza la pagina
      */
-    refreshHandle = ()=>{
+    refreshHandle = () => {
         this.setCurrentPage(this.state.currentPage);
     }
     /**
@@ -132,12 +132,12 @@ export class Paginator extends Component {
         );
     }
 
-        /**
-     * Estable la pagina en el paginador
-     * Dipara el evento OnPage
-     * @param {Number} page  Número de pagina
-     * @param {Number} pageSize   Tamño de Pagina
-     */
+    /**
+ * Estable la pagina en el paginador
+ * Dipara el evento OnPage
+ * @param {Number} page  Número de pagina
+ * @param {Number} pageSize   Tamño de Pagina
+ */
     setSizePage(page, pageSize = this.state.pageSize) {
         //calculando desde y hasta
         const { from, to } = this.calculeFromAndTo(page, pageSize);
@@ -220,12 +220,12 @@ export class Paginator extends Component {
      */
     componentDidUpdate(props) {
 
-        const { showLoading , itemsCount,pageSize} = this.props;
+        const { showLoading, itemsCount, pageSize } = this.props;
         if (props.showLoading !== showLoading) {
             this.setState({ showLoading })
         }
- 
-        if(props.itemsCount !== itemsCount )   {
+
+        if (props.itemsCount !== itemsCount) {
             this.setSizePage(1);
         }
     }
@@ -236,77 +236,77 @@ export class Paginator extends Component {
     render() {
 
         return (
-                                  <ReactGuiContext.Consumer>
-       {({ skin }) => {
-          
-          style = skin.PaginataroStyle
+            <ReactGuiContext.Consumer>
+                {({ skin }) => {
 
-                  return (
-            <div className={style.paginator}>
-                {this.props.itemsCount > this.props.pageSize &&
-                    <div className={style.paginatorTiggers}>
-                        <a style={this.state.currentPage == 1 ? this.disbleStyle : {}}
-                            onClick={this.prevHandle}
-                            href="javascript:void(0)">« Anterior</a>
-                        <span>|</span>
-                        <span>Página</span>
-                        <span>
-                            <a href="javascript:void(0)" style={1 == this.state.currentPage ? { fontWeight: 'bold' } : {}} onClick={() => this.setCurrentPage(1)}>1</a>
+                    style = skin.PaginatorStyle
 
-                            {this.state.showPrevTiggers &&
-                                <a href="javascript:void(0)"
-                                    onClick={() => {
-                                        this.setCurrentPage(this.state.firstTiggerPage - 1);
-                                    }}>...</a>
+                    return (
+                        <div className={style.paginator}>
+                            {this.props.itemsCount > this.props.pageSize &&
+                                <div className={style.paginatorTiggers}>
+                                    <a style={this.state.currentPage == 1 ? this.disbleStyle : {}}
+                                        onClick={this.prevHandle}
+                                        href="javascript:void(0)">« Anterior</a>
+                                    <span>|</span>
+                                    <span>Página</span>
+                                    <span>
+                                        <a href="javascript:void(0)" style={1 == this.state.currentPage ? { fontWeight: 'bold' } : {}} onClick={() => this.setCurrentPage(1)}>1</a>
+
+                                        {this.state.showPrevTiggers &&
+                                            <a href="javascript:void(0)"
+                                                onClick={() => {
+                                                    this.setCurrentPage(this.state.firstTiggerPage - 1);
+                                                }}>...</a>
+                                        }
+
+                                        {this.createIndexPaginationTiggers()}
+
+                                        {this.state.showNextTiggers &&
+                                            <a href="javascript:void(0)"
+                                                onClick={() => {
+                                                    this.setCurrentPage(this.state.lastTiggerPage + 1);
+                                                }}>...</a>
+                                        }
+
+                                        <a href="javascript:void(0)"
+                                            style={this.state.lastPageIndex == this.state.currentPage ? { fontWeight: 'bold' } : {}}
+                                            onClick={() => this.setCurrentPage(this.state.lastPageIndex)}>
+                                            {this.state.lastPageIndex}
+                                        </a>
+                                    </span>
+                                    <span>|</span>
+                                    <a style={this.state.currentPage == this.state.lastPageIndex ? this.disbleStyle : {}}
+                                        href="javascript:void(0)"
+                                        onClick={this.nextHandle}>Siguiente »</a>
+                                </div>
                             }
+                            {this.props.itemsCount <= this.props.pageSize &&
+                                <div className={style.paginatorTiggers}></div>}
+                            <div className={style.paginatorInfo}>
+                                {this.props.itemsCount > this.props.pageSize &&
+                                    <div>
+                                        <span>Items por página: </span>
+                                        <span>
+                                            {this.createPageSizeOptions()}
+                                        </span>
+                                        <span>|</span>
+                                    </div>
+                                }
+                                <span>Mostrando {this.state.from}-{this.state.to} de {this.props.itemsCount} ítems</span>
+                                <span style={{ paddingRight: '5px' }}>|</span>
+                            </div>
+                            <div>
 
-                            {this.createIndexPaginationTiggers()}
+                                <div onClick={this.refreshHandle} style={{ paddingRight: '5px' }} className={style.loadingPanel}>
+                                    <div className={this.state.showLoading ? style.loaderxs : style.loaderStatic}></div>
+                                </div>
+                            </div>
 
-                            {this.state.showNextTiggers &&
-                                <a href="javascript:void(0)"
-                                    onClick={() => {
-                                        this.setCurrentPage(this.state.lastTiggerPage + 1);
-                                    }}>...</a>
-                            }
-
-                            <a href="javascript:void(0)"
-                                style={this.state.lastPageIndex == this.state.currentPage ? { fontWeight: 'bold' } : {}}
-                                onClick={() => this.setCurrentPage(this.state.lastPageIndex)}>
-                                {this.state.lastPageIndex}
-                            </a>
-                        </span>
-                        <span>|</span>
-                        <a style={this.state.currentPage == this.state.lastPageIndex ? this.disbleStyle : {}}
-                            href="javascript:void(0)"
-                            onClick={this.nextHandle}>Siguiente »</a>
-                    </div>
-                }
-                {this.props.itemsCount <= this.props.pageSize &&
-                    <div className={style.paginatorTiggers}></div>}
-                <div className={style.paginatorInfo}>
-                    {this.props.itemsCount > this.props.pageSize &&
-                        <div>
-                            <span>Items por página: </span>
-                            <span>
-                                {this.createPageSizeOptions()}
-                            </span>
-                            <span>|</span>
                         </div>
-                    }
-                    <span>Mostrando {this.state.from}-{this.state.to} de {this.props.itemsCount} ítems</span>
-                    <span style={{ paddingRight: '5px' }}>|</span>
-                </div>
-                <div>
-                    
-                    <div onClick={this.refreshHandle} style={{ paddingRight: '5px' }} className={style.loadingPanel}>
-                        <div className={this.state.showLoading ? style.loaderxs : style.loaderStatic}></div>
-                    </div>
-                </div>
-
-            </div>
-                                          )
-              }}
-    </ReactGuiContext.Consumer>
+                    )
+                }}
+            </ReactGuiContext.Consumer>
         );
     }
 

@@ -3,12 +3,12 @@ import SearchLoockupPopup from './SearchLookupPopup.jsx'
 import axios from 'axios'
 import { jsonPath } from "./jsonPath";
 import { ReactGuiContext } from '../react-gui-provider'
-
+let  style = {}
 /**
  * Componente para realizar bsuqedas avanzadas
  */
 export default class SearchLoockup extends React.Component {
-
+ 
   constructor(props) {
     super(props)
     this.state = {
@@ -225,15 +225,17 @@ export default class SearchLoockup extends React.Component {
 
     return (
       <ReactGuiContext.Consumer>
-        {({ theme }) => {
-          if (theme != 'material')
-            require('./SearchLookup-cot.css');
-          else
-            require('./SearchLookup.css');
+
+        {({ skin }) => {
+
+           style = skin.SearchLookupStyle
+
+          const labelClass = value && value != ''?style.selected:''
+         
           return (
-            <div className='searchLookupContainer'>
+            <div className={style.searchLookupContainer}>
               {this.props.label && 
-                <label className={value && value != ''?'selected':''}>{this.props.label}</label>
+                <label className={labelClass}>{this.props.label}</label>
               }
               <SearchLookupInput
                 value={inputValue}
@@ -281,8 +283,9 @@ export default class SearchLoockup extends React.Component {
  * @param {*} props 
  */
 const SearchLookupInput = (props) => (
-  <div className={'searchLookup ' + props.inputClassName}>
+  <div className={style.searchLookup + ' ' + props.inputClassName}>
     <a href="javascript:void(0)"
+    className={props.selectedRow && props.selectedRow != ''?style.selectedValue:''}
       onClick={props.onClick}>
       {props.value}
     </a>

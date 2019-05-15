@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 import { ReactGuiContext } from '../react-gui-provider'
 
-
+  let style ={}
 /**
  * Componente para mostrate un modal
  */
 const Modal = (props) => {
-  let style ={}
+
   const {
     children,
     width,
@@ -50,7 +50,7 @@ const Modal = (props) => {
             <div>
               <div className={style.modalBackground}>
               </div>
-              <div className="modal">
+              <div className={style.modal}>
                 <div className={style.modalForeGroud}
                 >
                   <div className={style.modalContainer}

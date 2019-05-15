@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import { ReactGuiContext } from '../react-gui-provider'
 
-const style = {
-  table: 'table',
-  orderDirectionasc: 'orderDirectionasc',
-  orderDirectiondesc: 'orderDirectiondesc',
-  RowCodSelected: 'RowCodSelected'
-}
-
+let   style = {}
 /**
  * Componente para mostrar tablas
  */
@@ -155,11 +149,9 @@ export class Table extends Component {
 
     return (
       <ReactGuiContext.Consumer>
-        {({ theme }) => {
-          if (theme != 'material')
-            require('./table-cot.css');
-          else
-            require('./table.css');
+      {({ skin }) => {
+          
+          style = skin.TableStyle
 
           return (
             <div style={this.props.style} className={style.table}>

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { ReactGuiContext } from '../react-gui-provider'
 
+let style = {}
 /**
  * Componente para mostar un contenido
  * en el action bar
  */
 class ActionBar extends Component {
 
-  style = {}
+
 
   constructor(props) {
     super(props);
@@ -96,10 +97,10 @@ class ActionBarHeader extends Component {
         </span>
         {!this.props.hideQuickFilter && this.state.class != style.isExpanded &&
           <div className={style.quickSearch}>
-            <div className="inputBoxQuick">
+            <div className={style.inputBoxQuick}>
               <input ref={this.quickInpt} placeholder="Búsqueda rápida" type="text" onKeyUp={this.enterKeyHandle} />
-              <span className="highlight"></span>
-              <span className="bar"></span>
+              <span className={style.highlight}></span>
+              <span className={style.bar}></span>
             </div>
             <span onClick={() => this.triggerSearch()} >&nbsp;</span>
           </div>

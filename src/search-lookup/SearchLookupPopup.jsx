@@ -97,20 +97,7 @@ function SearchLookupPopup(props) {
   )
 }
 
-/**
- * Compnenete que mustra una barra en la cabecera
- * junto con el boton de cerrar
- * @param {any} props 
- */
-const HeaderBar = (props) => (
-  <div className='headerBar'>
-    <a href='javascript:void(0)'
-      style={{ padding: 2, paddingRight: 5, color: 'black', fontWeight: 'bold' }}
-      onClick={() => props.onClosePopup()}>
-      X
-        </a>
-  </div>
-)
+
 
 /**
  * Componente que mustra un campo de filtro con su label

@@ -8,7 +8,7 @@ import PaginatorStyle from '../paginator/Paginator.css'
 import SearchLookupStyle from '../search-lookup/SearchLookup.css'
 import TableStyle from '../table/Table.css'
 
-export default  MaterialSkin = {
+export default   {
     ActionBarStyle,
     ActionButtonStyle,
     AutocompleteStyle,

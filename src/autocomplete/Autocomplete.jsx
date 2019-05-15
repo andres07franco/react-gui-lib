@@ -166,7 +166,7 @@ export default class Autocomplete extends React.Component {
       <ReactGuiContext.Consumer>
       {({ skin }) => {
           
-          style = skin.Autocomplete
+          style = skin.AutocompleteStyle
 
           return (
             <div>

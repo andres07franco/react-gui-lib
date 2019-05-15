@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import './style.css';
 
 
-import { ActionBar, ActionBarContent, ActionBarHeader,MaterialSkin,ReactGuiContext } from 'react-gui-lib'
+
+import { ActionBar, 
+  ActionBarContent, 
+  ActionBarHeader,
+  WinxpSkin,
+  MaterialSkin,
+  ReactGuiContext,
+  InputBox,
+  Table, Column , Button, Autocomplete, SearchLookup,Paginator, 
+  Modal,ModalContent,
+  ModalButtons,ActionButton  } from 'react-gui-lib'
 
 import { data, sl_settings } from './data.js'
 
 const superNames = [
   'thor', 'ironman', 'balc widow', 'falcon', 'cap', 'spiderman'
 ]
+
 
 export default class App extends Component {
 
@@ -48,21 +58,73 @@ export default class App extends Component {
 
   render() {
     return (
-      <ReactGuiContext.Provider value={{ skin:MaterialSkin }}>
-       
+      <ReactGuiContext.Provider value={{ skin:MaterialSkin}}>
+        <Modal showModal={this.state.showModal}
+          title="Avengers Form"
+          onCloseModal={() => this.setState({ showModal: false })}>
+          <ModalContent>
+            <form >
+          
+              <InputBox label="Nombre" />
+              <Autocomplete
+                label="Super name"
+                data={superNames}
+                name="supername"
+                value={this.state.supername}
+                onChange={(supername) => this.setState({ supername })}
+              />
+              <SearchLookup
+                label='Power'
+                data={data}
+                settings={sl_settings}
+                value={this.state.name}
+                onChange={(name) => this.setState({ name })}
+              />
+          
+            </form>
+          </ModalContent>
+          <ModalButtons >
+            <Button text='Cancelar' />
+            <Button text='Aceptar' />
+          </ModalButtons>
+        </Modal>
 
         <h1>Hello react gui lib</h1>
 
         <ActionBar>
           <ActionBarHeader>
+            <ActionButton
+              icon='add'
+              value='New'
+              onClick={() => this.setState({ showModal: true })} />
+            <ActionButton icon='edit' value='Edit' />
+            <ActionButton icon='delete' value='Remove' />
           </ActionBarHeader>
           <ActionBarContent>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-   onClick
+              <div>
+                <InputBox label="Nombre" />
+                <InputBox label="Super Nombre" />
+              </div>
+              <div >
+                <Button text='Buscar' />
+              </div>
             </div>
           </ActionBarContent>
         </ActionBar>
 
+        <Table dataSource={this.state.data}>
+          <Column headerText="Name" field="name" />
+          <Column headerText="Super Name" field="supername" />
+          <Column headerText="Super Power" field="power" />
+          <Paginator
+            onPage={this.handleOnPage}
+            pageNumber={this.state.pageNumber}
+            pageSize={this.state.pageSize}
+            showLoading={this.state.showGridLoading}
+            itemsCount={this.state.itemsCount}
+          />
+        </Table>
 
       </ReactGuiContext.Provider>
     )

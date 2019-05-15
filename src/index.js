@@ -13,21 +13,24 @@ import SearchLookup from './search-lookup/SearchLookup.jsx'
 import InputBox from './input-box/InputBox.jsx'
 import { ReactGuiContext } from './react-gui-provider'
 import MaterialSkin from './skins/MaterialSkin'
+import WinxpSkin from  './skins/WinxpSkin'
 
 export {
     ActionBarHeader,
     ActionBarContent,
     ActionBar,
     ActionButton,
-   // Table, Column, Paginator,
+    Table, Column, Paginator,
     Modal, ModalContent, ModalButtons,
    // MessageFilter,
   //  Message,
     //LoadingBar,
     Autocomplete,
-   // Field, Form, FormRow, Button,
-  //  SearchLookup,
+   // Field, Form, FormRow, 
+   Button,
+   SearchLookup,
     InputBox,
     ReactGuiContext,
-    MaterialSkin
+    MaterialSkin,
+    WinxpSkin
 }

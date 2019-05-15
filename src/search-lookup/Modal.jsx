@@ -15,31 +15,31 @@ function Modal(props) {
     width: 'auto',
     height: 'auto',
   }
-
+  let style = {}
   return (
     <ReactGuiContext.Consumer>
-      {({ theme }) => {
-        if (theme != 'material')
-          require('../modal/modal-cot.css');
-        else
-          require('../modal/modal.css');
+        {({ skin }) => {
+          
+          style = skin.ModalStyle
+
+          const modalheaderStyle = style.modalHeader + " " + style.modalHeaderSearchLookup
 
         return (<div>
-          <div className="modalBackground">
+          <div className={style.modalBackground}>
           </div>
           
-          <div className="modal">
-            <div className="modalForeGroud">
-              <div className='modalHeader modalHeaderSearchLookup'>
+          <div className={style.modal}>
+            <div className={style.modalForeGroud}>
+              <div className={modalheaderStyle}>
                 {props.title}
                 <a href="javascript:"
                   onClick={() => props.onCloseModal()}
-                  className='close'
+                  className={style.close}
                   title="Close">
                   <i className="material-icons">close</i>
                 </a>
               </div>
-              <div className="modalContainer"
+              <div className={style.modalContainer}
                 style={modalContainerStyle}>
                 <div >
                   {props.children}
