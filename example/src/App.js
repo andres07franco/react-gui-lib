@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-
-
 import { ActionBar, 
   ActionBarContent, 
   ActionBarHeader,
@@ -58,7 +56,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <ReactGuiContext.Provider value={{ skin:MaterialSkin}}>
+  <div>
         <Modal showModal={this.state.showModal}
           title="Avengers Form"
           onCloseModal={() => this.setState({ showModal: false })}>
@@ -125,8 +123,8 @@ export default class App extends Component {
             itemsCount={this.state.itemsCount}
           />
         </Table>
-
-      </ReactGuiContext.Provider>
+        </div>
+    
     )
   }
 }

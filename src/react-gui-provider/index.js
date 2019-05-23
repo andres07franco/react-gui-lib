@@ -1,5 +1,5 @@
 import React from 'react'
-
+import MaterialSkin from '../skins/MaterialSkin'
 export  const ReactGuiContext = React.createContext({
-  theme: 'material'
+  skin: MaterialSkin
 });
